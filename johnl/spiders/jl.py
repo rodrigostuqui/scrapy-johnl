@@ -3,11 +3,7 @@ import scrapy
 from scrapy.http.request import Request
 from selenium import webdriver
 from bs4 import BeautifulSoup
-<<<<<<< HEAD
 
-=======
-import time
->>>>>>> 554dabc2b3c37e5efce4afbdd6868efe5fc097a7
 
 class JlSpider(scrapy.Spider):
     name = 'jl'
@@ -18,25 +14,13 @@ class JlSpider(scrapy.Spider):
 
 
     def parse(self, response ,**kwargs):
-<<<<<<< HEAD
         links = self.get_brands_links(response)
-=======
-        links = response.xpath('//li/a[re:test(@href, "/brand")]/@href').getall()
->>>>>>> 554dabc2b3c37e5efce4afbdd6868efe5fc097a7
         for link in links:
             yield scrapy.Request(response.urljoin(link), callback = self.parse_product)
 
 
     def parse_product(self, response, **kwargs):
-<<<<<<< HEAD
         products = self.get_selenium(response)
-=======
-        self.driver.get(response.url)
-        time.sleep(3)
-        self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
-        time.sleep(3)
-        products = self.driver.page_source
->>>>>>> 554dabc2b3c37e5efce4afbdd6868efe5fc097a7
         soup=BeautifulSoup(products, 'html.parser')
         links = soup.find_all('a', class_= 'image_imageLink__1tBDW product-card_c-product-card__image__3CdTi product__image', href=True)
         for i in links:
@@ -47,7 +31,6 @@ class JlSpider(scrapy.Spider):
 
 
     def parse_description(self, response, **kwargs):
-<<<<<<< HEAD
         name = self.get_name(response)
         price = self.get_price(response)
         description = self.get_description(response)
@@ -112,11 +95,3 @@ class JlSpider(scrapy.Spider):
 
     def get_brands_links(self, response):
         return response.xpath('//ul[@class="brands__values"]//li/a[re:test(@href, "/brand")]/@href').getall()
-=======
-        name = response.xpath('//jl-store-stock//@productname').get()
-        price = response.xpath('//jl-store-stock//@skuprice').get()
-        yield{
-            'name' : name,
-        'price' : price
-        }
->>>>>>> 554dabc2b3c37e5efce4afbdd6868efe5fc097a7
