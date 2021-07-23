@@ -12,3 +12,33 @@ Exiting due to channel error.
 Exiting due to channel error.
 Exiting due to channel error.
 Exiting due to channel error.
+1627068835829	geckodriver	INFO	Listening on 127.0.0.1:55763
+1627068836831	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileeM3egH"
+1627068837653	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileeM3egH/search.json.mozlz4", (void 0)))
+1627068839579	Marionette	INFO	Listening on port 35785
+1627068839659	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://www.johnlewis.com/standard-plp/_next/static/chunks/commons.17b0e85e4a0bc90a453f.js, line 1: unreachable code after return statement
+JavaScript warning: https://www.johnlewis.com/standard-plp/_next/static/chunks/commons.17b0e85e4a0bc90a453f.js, line 1: unreachable code after return statement
+JavaScript warning: https://www.johnlewis.com/standard-plp/_next/static/chunks/commons.17b0e85e4a0bc90a453f.js, line 1: unreachable code after return statement
+JavaScript warning: https://www.johnlewis.com/standard-plp/_next/static/chunks/commons.17b0e85e4a0bc90a453f.js, line 1: unreachable code after return statement
+JavaScript warning: https://www.johnlewis.com/standard-plp/_next/static/chunks/commons.17b0e85e4a0bc90a453f.js, line 1: unreachable code after return statement
+JavaScript warning: https://www.johnlewis.com/standard-plp/_next/static/chunks/commons.17b0e85e4a0bc90a453f.js, line 1: unreachable code after return statement
+JavaScript warning: https://www.johnlewis.com/standard-plp/_next/static/chunks/commons.17b0e85e4a0bc90a453f.js, line 1: unreachable code after return statement
+JavaScript warning: https://www.johnlewis.com/standard-plp/_next/static/chunks/commons.17b0e85e4a0bc90a453f.js, line 1: unreachable code after return statement
+JavaScript warning: https://www.johnlewis.com/standard-plp/_next/static/chunks/commons.17b0e85e4a0bc90a453f.js, line 1: unreachable code after return statement
+JavaScript warning: https://www.johnlewis.com/standard-plp/_next/static/chunks/commons.17b0e85e4a0bc90a453f.js, line 1: unreachable code after return statement
+JavaScript warning: https://www.johnlewis.com/standard-plp/_next/static/chunks/commons.17b0e85e4a0bc90a453f.js, line 1: unreachable code after return statement
+JavaScript warning: https://www.johnlewis.com/standard-plp/_next/static/chunks/commons.17b0e85e4a0bc90a453f.js, line 1: unreachable code after return statement
+console.error: services.settings: 
+  main/doh-providers Signature failed  InvalidSignatureError: Invalid content signature (main/doh-providers)
+console.error: services.settings: 
+  main/doh-providers local data was corrupted
+console.warn: services.settings: main/doh-providers Signature verified failed. Retry from scratch
+console.error: services.settings: 
+  main/doh-config Signature failed  InvalidSignatureError: Invalid content signature (main/doh-config)
+console.error: services.settings: 
+  main/doh-config local data was corrupted
+console.warn: services.settings: main/doh-config Signature verified failed. Retry from scratch
+console.log: WebExtensions: reset-default-search: starting.
+console.log: WebExtensions: reset-default-search: No addons in our list are installed.

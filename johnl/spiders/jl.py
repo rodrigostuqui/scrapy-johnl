@@ -3,7 +3,7 @@ import scrapy
 from scrapy.http.request import Request
 from selenium import webdriver
 from bs4 import BeautifulSoup
-
+import time
 
 class JlSpider(scrapy.Spider):
     name = 'jl'
@@ -22,7 +22,7 @@ class JlSpider(scrapy.Spider):
     def parse_product(self, response, **kwargs):
         products = self.get_selenium(response)
         soup=BeautifulSoup(products, 'html.parser')
-        links = soup.find_all('a', class_= 'image_imageLink__1tBDW product-card_c-product-card__image__3CdTi product__image', href=True)
+        links = soup.find_all('a', class_= 'image_imageLink__RnFSY product-card_c-product-card__image__3TMre product__image', href=True)
         for i in links:
             yield scrapy.Request(url="https://www.johnlewis.com{}".format(i['href']), callback=self.parse_description)
         next_page = response.xpath('//a[contains(@class, "Pagination_c-pagination__btn__2UzxY Pagination_c-pagination__next-btn__3g_DG")]/@href').get()
@@ -64,9 +64,9 @@ class JlSpider(scrapy.Spider):
 
     def get_selenium(self, response):
         self.driver.get(response.url)
-        self.driver.implicitly_wait(3)
+        time.sleep(3)
         self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
-        self.driver.implicitly_wait(3)
+        time.sleep(3)
         return self.driver.page_source
 
     def get_price(self, response):
