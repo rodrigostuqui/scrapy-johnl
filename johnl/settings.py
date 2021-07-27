@@ -12,10 +12,11 @@ BOT_NAME = 'johnl'
 SPIDER_MODULES = ['johnl.spiders']
 NEWSPIDER_MODULE = 'johnl.spiders'
 
-
+ITEM_PIPELINES = {'scrapy.pipelines.images.ImagesPipeline': 1}
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 USER_AGENT = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36 OPR/76.0.4017.227'
-
+IMAGES_STORE = 's3://gdsauisd/'
+IMAGES_STORE_S3_ACL = 'public-read'
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = False
 

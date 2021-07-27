@@ -4,13 +4,21 @@ from scrapy.http.request import Request
 from selenium import webdriver
 from bs4 import BeautifulSoup
 import time
+from ..items import JohnlItem
+import random
+import string
+from selenium.webdriver.firefox.options import Options
+import json
+from scrapy.utils.serialize import ScrapyJSONEncoder
 
 class JlSpider(scrapy.Spider):
     name = 'jl'
     start_urls = ['https://www.johnlewis.com/brands']
-
+    _encoder = ScrapyJSONEncoder()
     def __init__(self):
-        self.driver = webdriver.Firefox()
+        option = Options()
+        option.headless = True
+        self.driver = webdriver.Firefox(options=option)
 
 
     def parse(self, response ,**kwargs):
@@ -20,7 +28,15 @@ class JlSpider(scrapy.Spider):
 
 
     def parse_product(self, response, **kwargs):
-        products = self.get_selenium(response)
+        try:
+            count = str(response.xpath('//*[@id="js-plp-header"]/div/div/h1/span/span//text()').get()).strip("()")
+            count = int(count)
+            if count > 24:
+                products = self.get_selenium(response)
+            else:
+                products = response.body
+        except:
+            products = self.get_selenium(response)
         soup=BeautifulSoup(products, 'html.parser')
         links = soup.find_all('a', class_= 'image_imageLink__RnFSY product-card_c-product-card__image__3TMre product__image', href=True)
         for i in links:
@@ -30,21 +46,36 @@ class JlSpider(scrapy.Spider):
             yield scrapy.Request(response.urljoin(next_page), callback=self.parse_product)
 
 
-    def parse_description(self, response, **kwargs):
-        name = self.get_name(response)
-        price = self.get_price(response)
-        description = self.get_description(response)
-        category = self.get_category(response)
-        subcategory = self.get_subcategory(response)
-        img_src = self.get_img(response)
+    def parse_description(self, response, **kwargs): 
+        serial_number = ''.join(random.choices(string.ascii_letters + string.digits, k=8))
+        images = self.get_url_imgs(response)
+        products = self.dictionary_items(response, serial_number)
+        self.create_json(products)
         yield{
-           'name' : name,
-        'price' : price,
-        'desc' : description,
-        'category' : category,
-        'subcategory' : subcategory,
-        'images_urls' : img_src
+            'image_urls' : images,
+        'serial_number' : serial_number
         }
+
+
+    def create_json(self, item):
+        jsonString = json.dumps(item)
+        jsonFile = open("item.json", "r")
+        conteudo = jsonFile.readlines()
+        conteudo.append(jsonString + "\n")
+        jsonFile = open("item.json", "w")
+        jsonFile.writelines(conteudo)
+        jsonFile.close()
+
+    def dictionary_items(self, response, serial_number):
+        products = []
+        products.append({
+            'category' : self.get_category(response),
+            'subcategory' : self.get_subcategory(response),
+            'name' : self.get_name(response),
+            'desc' : self.get_description(response),
+            'serial' : serial_number
+        })
+        return products
 
     def get_category(self, response):
         return response.xpath('//ul[@class="breadcrumb-carousel__list"]//text()')[6].get()
@@ -52,46 +83,46 @@ class JlSpider(scrapy.Spider):
     def get_subcategory(self, response):
         return response.xpath('//ul[@class="breadcrumb-carousel__list"]//text()')[10].get()
 
-    def get_img(self, response):
-        img1_principal = response.xpath('//div[@class="carousel u-centred"]//img/@src').get()
-        img2_secundaria = response.xpath('//li[@class="product-media__item"]//img/@data-large-image').getall()
-        if img1_principal == None:
-            img2_secundaria = response.xpath('//div[@class="ProductImage_ProductImage__1aYqw zoom"]//img/@src').getall()
-            img1_principal = response.xpath('//div[@id="image-print-container"]//img/@src').get()
-        img2_secundaria.append(img1_principal)
-        return img2_secundaria
-
+    def get_url_imgs(self, response):
+        main_img = response.xpath('//div[@class="carousel u-centred"]//img/@src').get()
+        side_img = response.xpath('//li[@class="product-media__item"]//img/@data-large-image').getall()
+        if main_img == None:
+            side_img = response.xpath('//div[@class="ProductImage_ProductImage__1aYqw zoom"]//img/@src').getall()
+            main_img = response.xpath('//div[@id="image-print-container"]//img/@src').get()
+        side_img.append(main_img)
+        images = list()
+        for img in side_img:
+            images.append(response.urljoin(img))
+        return images
 
     def get_selenium(self, response):
         self.driver.get(response.url)
-        time.sleep(3)
+        self.driver.implicitly_wait(3)
         self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
         time.sleep(3)
         return self.driver.page_source
-
-    def get_price(self, response):
-        return response.xpath('//jl-store-stock//@skuprice').get()
 
     def get_name(self, response):
         return response.xpath('//jl-store-stock//@productname').get()
 
     def get_description(self, response):
-        description = response.xpath('//ul[@class="ProductSpecification_ul__84skI"]//text()').getall()
+        description = response.xpath('//*[@id="3"]/div/div/ul//text()')[2:].getall()
+        formatted_description = list()
+        count = 0 
         if description == []:
-            desc_dt = response.xpath('//dt[@class="product-specification-list__label"]')
-            desc_dd = response.xpath('//dd[@class="product-specification-list__value"]')
-            a_dd = []
-            a_dt = []
-            for i in desc_dd:
-                dd = i.xpath('.//text()').get()
-                a_dd.append(str(dd).strip())
-            for i in desc_dt:
-                dt = i.xpath('.//text()').get()
-                a_dt.append(str(dt).strip())
-            for i in range(len(a_dd)):
-                frase = "{}={}".format(a_dt[i], a_dd[i])
-                description.append(frase)
-        return description
+            description_label = response.xpath('//dt[@class="product-specification-list__label"]')
+            description_value = response.xpath('//dd[@class="product-specification-list__value"]')
+            for i in range(len(description_label)):
+                value = description_value[i].xpath('.//text()').get()
+                label = description_label[i].xpath('.//text()').get()
+                phrase = "{} = {}".format(str(label).strip(), str(value).strip())
+                formatted_description.append(phrase)
+        else:
+            while count < len(description)-2:
+                phrase = "{} = {}".format(str(description[count]), str(description[count+2]))
+                formatted_description.append(phrase)
+                count = count + 3
+        return formatted_description
 
     def get_brands_links(self, response):
         return response.xpath('//ul[@class="brands__values"]//li/a[re:test(@href, "/brand")]/@href').getall()
