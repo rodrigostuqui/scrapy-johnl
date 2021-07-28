@@ -1671,3 +1671,58 @@ JavaScript warning: https://www.johnlewis.com/standard-plp/_next/static/chunks/c
 Exiting due to channel error.
 Exiting due to channel error.
 Exiting due to channel error.
+1627444758770	geckodriver	INFO	Listening on 127.0.0.1:36089
+1627444759781	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilePSEer3"
+*** You are running in headless mode.
+1627444760907	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilePSEer3/search.json.mozlz4", (void 0)))
+1627444762969	Marionette	INFO	Listening on port 44193
+1627444763026	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://www.johnlewis.com/standard-plp/_next/static/chunks/commons.17b0e85e4a0bc90a453f.js, line 1: unreachable code after return statement
+JavaScript warning: https://www.johnlewis.com/standard-plp/_next/static/chunks/commons.17b0e85e4a0bc90a453f.js, line 1: unreachable code after return statement
+JavaScript warning: https://www.johnlewis.com/standard-plp/_next/static/chunks/commons.17b0e85e4a0bc90a453f.js, line 1: unreachable code after return statement
+JavaScript warning: https://www.johnlewis.com/Y1DR/JxF_/TtlN/hZ/6BCw/w7k7Gt8r/WChw/BTgePUcc/Z2M, line 1: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://www.johnlewis.com/Y1DR/JxF_/TtlN/hZ/6BCw/w7k7Gt8r/WChw/BTgePUcc/Z2M, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585). ()
+JavaScript warning: https://www.johnlewis.com/standard-plp/_next/static/chunks/commons.17b0e85e4a0bc90a453f.js, line 1: unreachable code after return statement
+JavaScript warning: https://www.johnlewis.com/standard-plp/_next/static/chunks/commons.17b0e85e4a0bc90a453f.js, line 1: unreachable code after return statement
+JavaScript warning: https://www.johnlewis.com/standard-plp/_next/static/chunks/commons.17b0e85e4a0bc90a453f.js, line 1: unreachable code after return statement
+JavaScript warning: https://www.johnlewis.com/standard-plp/_next/static/chunks/commons.17b0e85e4a0bc90a453f.js, line 1: unreachable code after return statement
+JavaScript warning: https://www.johnlewis.com/standard-plp/_next/static/chunks/commons.17b0e85e4a0bc90a453f.js, line 1: unreachable code after return statement
+JavaScript warning: https://www.johnlewis.com/standard-plp/_next/static/chunks/commons.17b0e85e4a0bc90a453f.js, line 1: unreachable code after return statement
+JavaScript warning: https://www.johnlewis.com/standard-plp/_next/static/chunks/commons.17b0e85e4a0bc90a453f.js, line 1: unreachable code after return statement
+JavaScript warning: https://www.johnlewis.com/standard-plp/_next/static/chunks/commons.17b0e85e4a0bc90a453f.js, line 1: unreachable code after return statement
+JavaScript warning: https://www.johnlewis.com/standard-plp/_next/static/chunks/commons.17b0e85e4a0bc90a453f.js, line 1: unreachable code after return statement
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1627445075488	geckodriver	INFO	Listening on 127.0.0.1:44237
+1627445076494	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileyzpe6l"
+*** You are running in headless mode.
+1627445077708	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileyzpe6l/search.json.mozlz4", (void 0)))
+1627445079429	Marionette	INFO	Listening on port 44883
+1627445079525	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://www.johnlewis.com/standard-plp/_next/static/chunks/commons.17b0e85e4a0bc90a453f.js, line 1: unreachable code after return statement
+JavaScript warning: https://www.johnlewis.com/standard-plp/_next/static/chunks/commons.17b0e85e4a0bc90a453f.js, line 1: unreachable code after return statement
+JavaScript warning: https://www.johnlewis.com/standard-plp/_next/static/chunks/commons.17b0e85e4a0bc90a453f.js, line 1: unreachable code after return statement
+JavaScript warning: https://www.johnlewis.com/Y1DR/JxF_/TtlN/hZ/6BCw/w7k7Gt8r/WChw/BTgePUcc/Z2M, line 1: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://www.johnlewis.com/Y1DR/JxF_/TtlN/hZ/6BCw/w7k7Gt8r/WChw/BTgePUcc/Z2M, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585). ()
+JavaScript warning: https://www.johnlewis.com/standard-plp/_next/static/chunks/commons.17b0e85e4a0bc90a453f.js, line 1: unreachable code after return statement
+JavaScript warning: https://www.johnlewis.com/standard-plp/_next/static/chunks/commons.17b0e85e4a0bc90a453f.js, line 1: unreachable code after return statement
+JavaScript warning: https://www.johnlewis.com/standard-plp/_next/static/chunks/commons.17b0e85e4a0bc90a453f.js, line 1: unreachable code after return statement
+JavaScript warning: https://www.johnlewis.com/standard-plp/_next/static/chunks/commons.17b0e85e4a0bc90a453f.js, line 1: unreachable code after return statement
+JavaScript warning: https://www.johnlewis.com/standard-plp/_next/static/chunks/commons.17b0e85e4a0bc90a453f.js, line 1: unreachable code after return statement
+JavaScript warning: https://www.johnlewis.com/standard-plp/_next/static/chunks/commons.17b0e85e4a0bc90a453f.js, line 1: unreachable code after return statement
+JavaScript warning: https://www.johnlewis.com/standard-plp/_next/static/chunks/commons.17b0e85e4a0bc90a453f.js, line 1: unreachable code after return statement
+JavaScript warning: https://www.johnlewis.com/standard-plp/_next/static/chunks/commons.17b0e85e4a0bc90a453f.js, line 1: unreachable code after return statement
+JavaScript warning: https://www.johnlewis.com/standard-plp/_next/static/chunks/commons.17b0e85e4a0bc90a453f.js, line 1: unreachable code after return statement
+JavaScript warning: https://www.johnlewis.com/standard-plp/_next/static/chunks/commons.17b0e85e4a0bc90a453f.js, line 1: unreachable code after return statement
+JavaScript warning: https://www.johnlewis.com/standard-plp/_next/static/chunks/commons.17b0e85e4a0bc90a453f.js, line 1: unreachable code after return statement
+JavaScript warning: https://www.johnlewis.com/standard-plp/_next/static/chunks/commons.17b0e85e4a0bc90a453f.js, line 1: unreachable code after return statement
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.

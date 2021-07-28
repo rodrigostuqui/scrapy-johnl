@@ -14,7 +14,7 @@ from scrapy.utils.serialize import ScrapyJSONEncoder
 class JlSpider(scrapy.Spider):
     name = 'jl'
     start_urls = ['https://www.johnlewis.com/brands']
-    _encoder = ScrapyJSONEncoder()
+    products = list()
     def __init__(self):
         option = Options()
         option.headless = True
@@ -49,40 +49,28 @@ class JlSpider(scrapy.Spider):
     def parse_description(self, response, **kwargs): 
         serial_number = ''.join(random.choices(string.ascii_letters + string.digits, k=8))
         images = self.get_url_imgs(response)
-        product = self.dictionary_items(response, serial_number)
-        self.create_json(product)
+        self.dictionary_items(response, serial_number)
+        self.create_json()
         yield{
             'image_urls' : images,
         'serial_number' : serial_number
         }
 
 
-    def create_json(self, item):
-        try:    
-            with open('item.json', 'r') as jsonFile:
-                jsonFile.close()
-        except:
-            with open('item.json', 'w') as jsonFile:
-                json.dump([], jsonFile)
-                jsonFile.close()
-
-        jsonFile = open("item.json", "r")        
-        jsonData = json.load(jsonFile)
-        jsonData.append(item)
-        jsonStr = json.dumps(jsonData, indent=4)
+    def create_json(self):
+        jsonString = json.dumps(self.products)
         jsonFile = open("item.json", "w")
-        jsonFile.writelines(jsonStr)
+        jsonFile.writelines(jsonString)
         jsonFile.close()
 
     def dictionary_items(self, response, serial_number):
-        product = {
+        self.products.append({
             'category' : self.get_category(response),
-            'subcategory' : self.get_subcategory(response),
-            'name' : self.get_name(response),
-            'desc' : self.get_description(response),
-            'serial' : serial_number
-        }
-        return product
+        'subcategory' : self.get_subcategory(response),
+        'name' : self.get_name(response),
+        'desc' : self.get_description(response),
+        'serial' : serial_number
+        })
 
     def get_category(self, response):
         return response.xpath('//ul[@class="breadcrumb-carousel__list"]//text()')[6].get()
