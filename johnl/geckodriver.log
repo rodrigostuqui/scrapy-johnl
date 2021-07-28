@@ -1,0 +1,96 @@
+1627441706260	geckodriver	INFO	Listening on 127.0.0.1:57669
+1627441709293	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\Murilo\\AppData\\Local\\Temp\\rust_mozprofilehT0Kzd"
+*** You are running in headless mode.
+1627441709710	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Murilo\\AppData\\Local\\Temp\\rust_mozprofilehT0Kzd\\search.json.mozlz4", (void 0)))
+1627441711142	Marionette	INFO	Listening on port 57677
+1627441711361	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://www.johnlewis.com/standard-plp/_next/static/chunks/commons.17b0e85e4a0bc90a453f.js, line 1: unreachable code after return statement
+JavaScript warning: https://www.johnlewis.com/standard-plp/_next/static/chunks/commons.17b0e85e4a0bc90a453f.js, line 1: unreachable code after return statement
+JavaScript warning: https://www.johnlewis.com/standard-plp/_next/static/chunks/commons.17b0e85e4a0bc90a453f.js, line 1: unreachable code after return statement
+JavaScript warning: https://www.johnlewis.com/Y1DR/JxF_/TtlN/hZ/6BCw/w7k7Gt8r/WChw/BTgePUcc/Z2M, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585). ()
+JavaScript warning: https://www.johnlewis.com/standard-plp/_next/static/chunks/commons.17b0e85e4a0bc90a453f.js, line 1: unreachable code after return statement
+JavaScript warning: https://www.johnlewis.com/standard-plp/_next/static/chunks/commons.17b0e85e4a0bc90a453f.js, line 1: unreachable code after return statement
+JavaScript warning: https://www.johnlewis.com/standard-plp/_next/static/chunks/commons.17b0e85e4a0bc90a453f.js, line 1: unreachable code after return statement
+JavaScript warning: https://www.johnlewis.com/standard-plp/_next/static/chunks/commons.17b0e85e4a0bc90a453f.js, line 1: unreachable code after return statement
+JavaScript warning: https://www.johnlewis.com/standard-plp/_next/static/chunks/commons.17b0e85e4a0bc90a453f.js, line 1: unreachable code after return statement
+JavaScript warning: https://www.johnlewis.com/standard-plp/_next/static/chunks/commons.17b0e85e4a0bc90a453f.js, line 1: unreachable code after return statement
+JavaScript warning: https://www.johnlewis.com/standard-plp/_next/static/chunks/commons.17b0e85e4a0bc90a453f.js, line 1: unreachable code after return statement
+JavaScript warning: https://www.johnlewis.com/standard-plp/_next/static/chunks/commons.17b0e85e4a0bc90a453f.js, line 1: unreachable code after return statement
+JavaScript warning: https://www.johnlewis.com/standard-plp/_next/static/chunks/commons.17b0e85e4a0bc90a453f.js, line 1: unreachable code after return statement
+console.error: services.settings: 
+  main/doh-providers Signature failed  InvalidSignatureError: Invalid content signature (main/doh-providers)
+console.error: services.settings: 
+  main/doh-providers local data was corrupted
+console.warn: services.settings: main/doh-providers Signature verified failed. Retry from scratch
+console.error: services.settings: 
+  main/doh-config Signature failed  InvalidSignatureError: Invalid content signature (main/doh-config)
+console.error: services.settings: 
+  main/doh-config local data was corrupted
+console.warn: services.settings: main/doh-config Signature verified failed. Retry from scratch
+console.log: WebExtensions: reset-default-search: starting.
+console.log: WebExtensions: reset-default-search: No addons in our list are installed.
+JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+www.johnlewis.com/standard-plp/_next/static/chunks/commons.17b0e85e4a0bc90a453f.js, line 1: unreachable code after return statement
+JavaScript warning: https://www.johnlewis.com/standard-plp/_next/static/chunks/commons.17b0e85e4a0bc90a453f.js, line 1: unreachable code after return statement
+JavaScript warning: https://www.johnlewis.com/standard-plp/_next/static/chunks/commons.17b0e85e4a0bc90a453f.js, line 1: unreachable code after return statement
+JavaScript warning: https://www.johnlewis.com/Y1DR/JxF_/TtlN/hZ/6BCw/w7k7Gt8r/WChw/BTgePUcc/Z2M, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585). ()
+JavaScript warning: https://www.johnlewis.com/standard-plp/_next/static/chunks/commons.17b0e85e4a0bc90a453f.js, line 1: unreachable code after return statement
+JavaScript warning: https://www.johnlewis.com/standard-plp/_next/static/chunks/commons.17b0e85e4a0bc90a453f.js, line 1: unreachable code after return statement
+JavaScript warning: https://www.johnlewis.com/standard-plp/_next/static/chunks/commons.17b0e85e4a0bc90a453f.js, line 1: unreachable code after return statement
+JavaScript warning: https://www.johnlewis.com/standard-plp/_next/static/chunks/commons.17b0e85e4a0bc90a453f.js, line 1: unreachable code after return statement
+JavaScript warning: https://www.johnlewis.com/standard-plp/_next/static/chunks/commons.17b0e85e4a0bc90a453f.js, line 1: unreachable code after return statement
+JavaScript warning: https://www.johnlewis.com/standard-plp/_next/static/chunks/commons.17b0e85e4a0bc90a453f.js, line 1: unreachable code after return statement
+JavaScript warning: https://www.johnlewis.com/standard-plp/_next/static/chunks/commons.17b0e85e4a0bc90a453f.js, line 1: unreachable code after return statement
+JavaScript warning: https://www.johnlewis.com/standard-plp/_next/static/chunks/commons.17b0e85e4a0bc90a453f.js, line 1: unreachable code after return statement
+JavaScript warning: https://www.johnlewis.com/standard-plp/_next/static/chunks/commons.17b0e85e4a0bc90a453f.js, line 1: unreachable code after return statement
+console.error: services.settings: 
+  main/doh-providers Signature failed  InvalidSignatureError: Invalid content signature (main/doh-providers)
+console.error: services.settings: 
+  main/doh-providers local data was corrupted
+console.warn: services.settings: main/doh-providers Signature verified failed. Retry from scratch
+console.error: services.settings: 
+  main/doh-config Signature failed  InvalidSignatureError: Invalid content signature (main/doh-config)
+console.error: services.settings: 
+  main/doh-config local data was corrupted
+console.warn: services.settings: main/doh-config Signature verified failed. Retry from scratch
+console.log: WebExtensions: reset-default-search: starting.
+console.log: WebExtensions: reset-default-search: No addons in our list are installed.
+JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+1:60963
+1627442493827	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\Murilo\\AppData\\Local\\Temp\\rust_mozprofilee3ERFl"
+*** You are running in headless mode.
+1627442494207	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Murilo\\AppData\\Local\\Temp\\rust_mozprofilee3ERFl\\search.json.mozlz4", (void 0)))
+1627442495605	Marionette	INFO	Listening on port 60972
+1627442495879	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://www.johnlewis.com/standard-plp/_next/static/chunks/commons.17b0e85e4a0bc90a453f.js, line 1: unreachable code after return statement
+JavaScript warning: https://www.johnlewis.com/standard-plp/_next/static/chunks/commons.17b0e85e4a0bc90a453f.js, line 1: unreachable code after return statement
+JavaScript warning: https://www.johnlewis.com/standard-plp/_next/static/chunks/commons.17b0e85e4a0bc90a453f.js, line 1: unreachable code after return statement
+JavaScript warning: https://www.johnlewis.com/Y1DR/JxF_/TtlN/hZ/6BCw/w7k7Gt8r/WChw/BTgePUcc/Z2M, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585). ()
+JavaScript warning: https://www.johnlewis.com/standard-plp/_next/static/chunks/commons.17b0e85e4a0bc90a453f.js, line 1: unreachable code after return statement
+JavaScript warning: https://www.johnlewis.com/standard-plp/_next/static/chunks/commons.17b0e85e4a0bc90a453f.js, line 1: unreachable code after return statement
+JavaScript warning: https://www.johnlewis.com/standard-plp/_next/static/chunks/commons.17b0e85e4a0bc90a453f.js, line 1: unreachable code after return statement
+JavaScript warning: https://www.johnlewis.com/standard-plp/_next/static/chunks/commons.17b0e85e4a0bc90a453f.js, line 1: unreachable code after return statement
+JavaScript warning: https://www.johnlewis.com/standard-plp/_next/static/chunks/commons.17b0e85e4a0bc90a453f.js, line 1: unreachable code after return statement
+JavaScript warning: https://www.johnlewis.com/standard-plp/_next/static/chunks/commons.17b0e85e4a0bc90a453f.js, line 1: unreachable code after return statement
+JavaScript warning: https://www.johnlewis.com/standard-plp/_next/static/chunks/commons.17b0e85e4a0bc90a453f.js, line 1: unreachable code after return statement
+JavaScript warning: https://www.johnlewis.com/standard-plp/_next/static/chunks/commons.17b0e85e4a0bc90a453f.js, line 1: unreachable code after return statement
+JavaScript warning: https://www.johnlewis.com/standard-plp/_next/static/chunks/commons.17b0e85e4a0bc90a453f.js, line 1: unreachable code after return statement
+console.error: services.settings: 
+  main/doh-providers Signature failed  InvalidSignatureError: Invalid content signature (main/doh-providers)
+console.error: services.settings: 
+  main/doh-providers local data was corrupted
+console.warn: services.settings: main/doh-providers Signature verified failed. Retry from scratch
+console.error: services.settings: 
+  main/doh-config Signature failed  InvalidSignatureError: Invalid content signature (main/doh-config)
+console.error: services.settings: 
+  main/doh-config local data was corrupted
+console.warn: services.settings: main/doh-config Signature verified failed. Retry from scratch
+console.log: WebExtensions: reset-default-search: starting.
+console.log: WebExtensions: reset-default-search: No addons in our list are installed.

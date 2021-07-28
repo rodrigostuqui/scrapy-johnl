@@ -57,7 +57,7 @@ class JlSpider(scrapy.Spider):
         }
 
 
-    def create_json(item):
+    def create_json(self, item):
         try:    
             with open('item.json', 'r') as jsonFile:
                 jsonFile.close()
