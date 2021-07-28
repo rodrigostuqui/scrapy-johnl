@@ -49,33 +49,40 @@ class JlSpider(scrapy.Spider):
     def parse_description(self, response, **kwargs): 
         serial_number = ''.join(random.choices(string.ascii_letters + string.digits, k=8))
         images = self.get_url_imgs(response)
-        products = self.dictionary_items(response, serial_number)
-        self.create_json(products)
+        product = self.dictionary_items(response, serial_number)
+        self.create_json(product)
         yield{
             'image_urls' : images,
         'serial_number' : serial_number
         }
 
 
-    def create_json(self, item):
-        jsonString = json.dumps(item)
-        jsonFile = open("item.json", "r")
-        conteudo = jsonFile.readlines()
-        conteudo.append(jsonString + "\n")
+    def create_json(item):
+        try:    
+            with open('item.json', 'r') as jsonFile:
+                jsonFile.close()
+        except:
+            with open('item.json', 'w') as jsonFile:
+                json.dump([], jsonFile)
+                jsonFile.close()
+
+        jsonFile = open("item.json", "r")        
+        jsonData = json.load(jsonFile)
+        jsonData.append(item)
+        jsonStr = json.dumps(jsonData, indent=4)
         jsonFile = open("item.json", "w")
-        jsonFile.writelines(conteudo)
+        jsonFile.writelines(jsonStr)
         jsonFile.close()
 
     def dictionary_items(self, response, serial_number):
-        products = []
-        products.append({
+        product = {
             'category' : self.get_category(response),
             'subcategory' : self.get_subcategory(response),
             'name' : self.get_name(response),
             'desc' : self.get_description(response),
             'serial' : serial_number
-        })
-        return products
+        }
+        return product
 
     def get_category(self, response):
         return response.xpath('//ul[@class="breadcrumb-carousel__list"]//text()')[6].get()
