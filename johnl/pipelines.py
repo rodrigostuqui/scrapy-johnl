@@ -6,7 +6,7 @@
 
 # useful for handling different item types with a single interface
 from itemadapter import ItemAdapter
-
+from scrapy_dynamodb import DynamoDbPipeline
 
 class JohnlPipeline:
     def process_item(self, item, spider):

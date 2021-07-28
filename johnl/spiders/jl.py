@@ -4,17 +4,16 @@ from scrapy.http.request import Request
 from selenium import webdriver
 from bs4 import BeautifulSoup
 import time
-from ..items import JohnlItem
 import random
 import string
 from selenium.webdriver.firefox.options import Options
-import json
-from scrapy.utils.serialize import ScrapyJSONEncoder
+import boto3
+
 
 class JlSpider(scrapy.Spider):
     name = 'jl'
     start_urls = ['https://www.johnlewis.com/brands']
-    products = list()
+    
     def __init__(self):
         option = Options()
         option.headless = True
@@ -49,28 +48,28 @@ class JlSpider(scrapy.Spider):
     def parse_description(self, response, **kwargs): 
         serial_number = ''.join(random.choices(string.ascii_letters + string.digits, k=8))
         images = self.get_url_imgs(response)
-        self.dictionary_items(response, serial_number)
-        self.create_json()
+        products = self.dictionary_items(response, serial_number)
+        self.insert_dynamodb(products)
         yield{
-            'image_urls' : images,
-        'serial_number' : serial_number
+            'serial_number' : serial_number,
+        'image_urls' : images
         }
 
 
-    def create_json(self):
-        jsonString = json.dumps(self.products)
-        jsonFile = open("item.json", "w")
-        jsonFile.writelines(jsonString)
-        jsonFile.close()
+    def insert_dynamodb(self, products):
+        dynamodb  = boto3.resource('dynamodb')
+        table = dynamodb.Table('products_items')
+        table.put_item(Item=products)
 
     def dictionary_items(self, response, serial_number):
-        self.products.append({
-            'category' : self.get_category(response),
+        products = {
+            'serial_number' : serial_number,
+        'category' : self.get_category(response),
         'subcategory' : self.get_subcategory(response),
         'name' : self.get_name(response),
-        'desc' : self.get_description(response),
-        'serial' : serial_number
-        })
+        'desc' : self.get_description(response)
+        }
+        return products
 
     def get_category(self, response):
         return response.xpath('//ul[@class="breadcrumb-carousel__list"]//text()')[6].get()
