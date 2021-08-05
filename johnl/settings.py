@@ -19,10 +19,10 @@ ITEM_PIPELINES = {'scrapy.pipelines.images.ImagesPipeline': 1,
 AWS_ACCESS_KEY_ID = 'AKIA6OYJLI7TLL3HUJE7'
 AWS_SECRET_ACCESS_KEY = '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'
 DYNAMODB_PIPELINE_REGION_NAME = 'sa-east-1'
-DYNAMODB_PIPELINE_TABLE_NAME = 'products'
+DYNAMODB_PIPELINE_TABLE_NAME = 'johnl_imgs_path'
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 USER_AGENT = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36 OPR/76.0.4017.227'
-IMAGES_STORE = 's3://gdsauisd/'
+IMAGES_STORE = 's3://johnl-images/'
 IMAGES_STORE_S3_ACL = 'public-read'
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = False

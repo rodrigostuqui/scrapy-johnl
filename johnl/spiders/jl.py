@@ -19,12 +19,10 @@ class JlSpider(scrapy.Spider):
         option.headless = True
         self.driver = webdriver.Firefox(options=option)
 
-
     def parse(self, response ,**kwargs):
         links = self.get_brands_links(response)
         for link in links:
             yield scrapy.Request(response.urljoin(link), callback = self.parse_product)
-
 
     def parse_product(self, response, **kwargs):
         try:
@@ -44,7 +42,6 @@ class JlSpider(scrapy.Spider):
         if next_page:
             yield scrapy.Request(response.urljoin(next_page), callback=self.parse_product)
 
-
     def parse_description(self, response, **kwargs): 
         serial_number = ''.join(random.choices(string.ascii_letters + string.digits, k=8))
         images = self.get_url_imgs(response)
@@ -55,10 +52,9 @@ class JlSpider(scrapy.Spider):
         'image_urls' : images
         }
 
-
     def insert_dynamodb(self, products):
         dynamodb  = boto3.resource('dynamodb')
-        table = dynamodb.Table('products_items')
+        table = dynamodb.Table('johnl-description')
         table.put_item(Item=products)
 
     def dictionary_items(self, response, serial_number):

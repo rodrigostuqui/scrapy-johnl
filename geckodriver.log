@@ -2224,3 +2224,85 @@ console.error: services.settings:
 console.warn: services.settings: main/doh-config Signature verified failed. Retry from scratch
 console.log: WebExtensions: reset-default-search: starting.
 console.log: WebExtensions: reset-default-search: No addons in our list are installed.
+
+###!!! [Parent][MessageChannel] Error: (msgtype=0x390079,name=PContent::Msg_DestroyBrowsingContextGroup) Closed channel: cannot send/recv
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Parent][MessageChannel] Error: (msgtype=0x390079,name=PContent::Msg_DestroyBrowsingContextGroup) Closed channel: cannot send/recv
+
+1627519959038	Marionette	INFO	Stopped listening on port 33025
+1627519959047	Marionette	INFO	Stopped listening on port 33435
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1628023824662	geckodriver	INFO	Listening on 127.0.0.1:59283
+1628023825667	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileRnGRar"
+*** You are running in headless mode.
+1628023826743	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileRnGRar/search.json.mozlz4", (void 0)))
+1628023828434	Marionette	INFO	Listening on port 41139
+1628023828495	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://www.johnlewis.com/standard-plp/_next/static/chunks/commons.17b0e85e4a0bc90a453f.js, line 1: unreachable code after return statement
+JavaScript warning: https://www.johnlewis.com/standard-plp/_next/static/chunks/commons.17b0e85e4a0bc90a453f.js, line 1: unreachable code after return statement
+JavaScript warning: https://www.johnlewis.com/standard-plp/_next/static/chunks/commons.17b0e85e4a0bc90a453f.js, line 1: unreachable code after return statement
+JavaScript warning: https://www.johnlewis.com/6AnkaXOzar4DVfRKkrah/1mSuzmzL/H0YtIFFvSg/d3/F7MGQDc0s, line 1: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://www.johnlewis.com/6AnkaXOzar4DVfRKkrah/1mSuzmzL/H0YtIFFvSg/d3/F7MGQDc0s, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585). ()
+JavaScript warning: https://www.johnlewis.com/standard-plp/_next/static/chunks/commons.17b0e85e4a0bc90a453f.js, line 1: unreachable code after return statement
+JavaScript warning: https://www.johnlewis.com/standard-plp/_next/static/chunks/commons.17b0e85e4a0bc90a453f.js, line 1: unreachable code after return statement
+JavaScript warning: https://www.johnlewis.com/standard-plp/_next/static/chunks/commons.17b0e85e4a0bc90a453f.js, line 1: unreachable code after return statement
+JavaScript warning: https://www.johnlewis.com/standard-plp/_next/static/chunks/commons.17b0e85e4a0bc90a453f.js, line 1: unreachable code after return statement
+JavaScript warning: https://www.johnlewis.com/standard-plp/_next/static/chunks/commons.17b0e85e4a0bc90a453f.js, line 1: unreachable code after return statement
+JavaScript warning: https://www.johnlewis.com/standard-plp/_next/static/chunks/commons.17b0e85e4a0bc90a453f.js, line 1: unreachable code after return statement
+JavaScript warning: https://www.johnlewis.com/standard-plp/_next/static/chunks/commons.17b0e85e4a0bc90a453f.js, line 1: unreachable code after return statement
+JavaScript warning: https://www.johnlewis.com/standard-plp/_next/static/chunks/commons.17b0e85e4a0bc90a453f.js, line 1: unreachable code after return statement
+JavaScript warning: https://www.johnlewis.com/standard-plp/_next/static/chunks/commons.17b0e85e4a0bc90a453f.js, line 1: unreachable code after return statement
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1628198693302	geckodriver	INFO	Listening on 127.0.0.1:40031
+1628198694302	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileSwD4Xq"
+*** You are running in headless mode.
+1628198695082	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileSwD4Xq/search.json.mozlz4", (void 0)))
+1628198696702	Marionette	INFO	Listening on port 35493
+1628198696742	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://www.johnlewis.com/standard-plp/_next/static/chunks/commons.17b0e85e4a0bc90a453f.js, line 1: unreachable code after return statement
+JavaScript warning: https://www.johnlewis.com/standard-plp/_next/static/chunks/commons.17b0e85e4a0bc90a453f.js, line 1: unreachable code after return statement
+JavaScript warning: https://www.johnlewis.com/standard-plp/_next/static/chunks/commons.17b0e85e4a0bc90a453f.js, line 1: unreachable code after return statement
+JavaScript warning: https://www.johnlewis.com/0VVIbOQ76/2u5e/Rra6w/OfYffDNbE7/InVedjM/O1hTNjx/vQA4, line 1: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://www.johnlewis.com/0VVIbOQ76/2u5e/Rra6w/OfYffDNbE7/InVedjM/O1hTNjx/vQA4, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585). ()
+JavaScript warning: https://www.johnlewis.com/standard-plp/_next/static/chunks/commons.17b0e85e4a0bc90a453f.js, line 1: unreachable code after return statement
+JavaScript warning: https://www.johnlewis.com/standard-plp/_next/static/chunks/commons.17b0e85e4a0bc90a453f.js, line 1: unreachable code after return statement
+JavaScript warning: https://www.johnlewis.com/standard-plp/_next/static/chunks/commons.17b0e85e4a0bc90a453f.js, line 1: unreachable code after return statement
+JavaScript warning: https://www.johnlewis.com/standard-plp/_next/static/chunks/commons.17b0e85e4a0bc90a453f.js, line 1: unreachable code after return statement
+JavaScript warning: https://www.johnlewis.com/standard-plp/_next/static/chunks/commons.17b0e85e4a0bc90a453f.js, line 1: unreachable code after return statement
+JavaScript warning: https://www.johnlewis.com/standard-plp/_next/static/chunks/commons.17b0e85e4a0bc90a453f.js, line 1: unreachable code after return statement
+JavaScript warning: https://www.johnlewis.com/standard-plp/_next/static/chunks/commons.17b0e85e4a0bc90a453f.js, line 1: unreachable code after return statement
+JavaScript warning: https://www.johnlewis.com/standard-plp/_next/static/chunks/commons.17b0e85e4a0bc90a453f.js, line 1: unreachable code after return statement
+JavaScript warning: https://www.johnlewis.com/standard-plp/_next/static/chunks/commons.17b0e85e4a0bc90a453f.js, line 1: unreachable code after return statement
+console.error: services.settings: 
+  main/doh-providers Signature failed  InvalidSignatureError: Invalid content signature (main/doh-providers)
+console.error: services.settings: 
+  main/doh-providers local data was corrupted
+console.warn: services.settings: main/doh-providers Signature verified failed. Retry from scratch
+console.error: services.settings: 
+  main/doh-config Signature failed  InvalidSignatureError: Invalid content signature (main/doh-config)
+console.error: services.settings: 
+  main/doh-config local data was corrupted
+console.warn: services.settings: main/doh-config Signature verified failed. Retry from scratch
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
