@@ -15,9 +15,6 @@ NEWSPIDER_MODULE = 'johnl.spiders'
 ITEM_PIPELINES = {'scrapy.pipelines.images.ImagesPipeline': 1, 
                     'johnl.pipelines.DynamoDbPipeline': 1}
 
-
-AWS_ACCESS_KEY_ID = 'AKIA6OYJLI7TLL3HUJE7'
-AWS_SECRET_ACCESS_KEY = '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'
 DYNAMODB_PIPELINE_REGION_NAME = 'sa-east-1'
 DYNAMODB_PIPELINE_TABLE_NAME = 'johnl_imgs_path'
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
