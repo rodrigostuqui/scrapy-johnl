@@ -20,11 +20,13 @@ class JlSpider(scrapy.Spider):
         self.driver = webdriver.Firefox(options=option)
 
     def parse(self, response ,**kwargs):
+        #Take all the brands of the site
         links = self.get_brands_links(response)
         for link in links:
             yield scrapy.Request(response.urljoin(link), callback = self.parse_product)
 
     def parse_product(self, response, **kwargs):
+        #Condition for using selenium
         try:
             count = str(response.xpath('//*[@id="js-plp-header"]/div/div/h1/span/span//text()').get()).strip("()")
             count = int(count)
@@ -36,9 +38,11 @@ class JlSpider(scrapy.Spider):
             products = self.get_selenium(response)
         soup=BeautifulSoup(products, 'html.parser')
         links = soup.find_all('a', class_= 'image_imageLink__RnFSY product-card_c-product-card__image__3TMre product__image', href=True)
+        #Take all the products
         for i in links:
             yield scrapy.Request(url="https://www.johnlewis.com{}".format(i['href']), callback=self.parse_description)
         next_page = response.xpath('//a[contains(@class, "Pagination_c-pagination__btn__2UzxY Pagination_c-pagination__next-btn__3g_DG")]/@href').get()
+        #Go to the next page(if exist)
         if next_page:
             yield scrapy.Request(response.urljoin(next_page), callback=self.parse_product)
 
@@ -96,9 +100,11 @@ class JlSpider(scrapy.Spider):
         return response.xpath('//jl-store-stock//@productname').get()
 
     def get_description(self, response):
+        #get and format the description(2 types)
         description = response.xpath('//*[@id="3"]/div/div/ul//text()')[2:].getall()
         formatted_description = list()
         count = 0 
+        #1 type
         if description == []:
             description_label = response.xpath('//dt[@class="product-specification-list__label"]')
             description_value = response.xpath('//dd[@class="product-specification-list__value"]')
@@ -107,6 +113,7 @@ class JlSpider(scrapy.Spider):
                 label = description_label[i].xpath('.//text()').get()
                 phrase = "{} = {}".format(str(label).strip(), str(value).strip())
                 formatted_description.append(phrase)
+        #2 type
         else:
             while count < len(description)-2:
                 phrase = "{} = {}".format(str(description[count]), str(description[count+2]))
